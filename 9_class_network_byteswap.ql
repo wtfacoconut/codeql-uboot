@@ -1,7 +1,6 @@
-
 import cpp
 
-class NetworkByteSwap extends Expr {
+class NetworkByteSwap extends Expr { // No mystery here. Just copied over the previous query to this class.
     NetworkByteSwap(){
         exists( MacroInvocation mi |
             this = mi.getExpr()
