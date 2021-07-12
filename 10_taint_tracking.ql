@@ -1,7 +1,6 @@
 /**
  * @kind path-problem
  */
-
 import cpp
 import semmle.code.cpp.dataflow.TaintTracking
 import DataFlow::PathGraph
@@ -25,7 +24,7 @@ class Config extends TaintTracking::Configuration {
      override predicate isSink(DataFlow::Node node) {
         exists( FunctionCall fc |
             fc.getTarget().getName().matches("memcpy")
-            and node.asExpr() = fc.getArgument(2) // arg 2 is the length param for memcpy
+            and node.asExpr() = fc.getArgument(2) // argument 2 is the 'length' param for memcpy. 
             )
      }
 }
